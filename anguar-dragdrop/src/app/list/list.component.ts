@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  itemList !: FormGroup;
+
+  constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
+    this.itemList = this.formBuilder.group({
+      item : ['',Validators.required]
+    })
   }
 
 }
