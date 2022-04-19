@@ -9,6 +9,10 @@ import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 export class ListComponent implements OnInit {
 
   itemList !: FormGroup;
+  tasks : any[]= [];
+  inProgress : any[]= [];
+  done : any[]= [];
+
 
   constructor(private formBuilder : FormBuilder) { }
 
