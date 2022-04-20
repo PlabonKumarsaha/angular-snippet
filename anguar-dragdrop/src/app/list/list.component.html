@@ -18,6 +18,38 @@
             </div>
         </div>
         <div class="col-md-9">
+      <div cdkDropListGroup>
+          <div class="row">
+            <!-- Todo-->
+            <div class="col-md-4">
+
+              <div class="example-container">
+                <h2>To do</h2>
+
+                <div
+                  cdkDropList
+                  [cdkDropListData]="tasks"
+                  class="example-list"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Inprogress-->
+
+            <div class="col-md-4">
+
+            </div>
+            <!-- Done-->
+
+            <div class="col-md-4">
+
+            </div>
+
+          </div>
+      </div>
+
 
         </div>
     </div>
