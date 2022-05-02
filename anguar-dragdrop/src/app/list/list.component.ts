@@ -45,4 +45,8 @@ drop(event: CdkDragDrop<ITask[]>) {
     })
   }
 
+  delteItem(i : number){
+    this.tasks.splice(i,1)
+  }
+
 }
