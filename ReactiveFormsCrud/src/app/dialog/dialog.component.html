@@ -5,9 +5,19 @@
     <div>
 
         <form class="example-form">
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Item Name</mat-label>
             <input matInput placeholder="Ex. apple" >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Item Catgeory</mat-label>
+            <mat-select placeholder="catgeory" >
+                <mat-option value="fruits">fruits</mat-option>
+                <mat-option value="vegetable">vegetable</mat-option>
+                <mat-option value="electronic">electronic</mat-option>
+                <mat-option value="household">household</mat-option>
+            </mat-select>
           </mat-form-field>
         </form>
 
