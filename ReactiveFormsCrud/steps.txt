@@ -1,0 +1,1 @@
+1. ng add @angular/material install for adding materialy
