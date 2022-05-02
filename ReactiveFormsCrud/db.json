@@ -1,9 +1,22 @@
 {
-  "posts": [
+  "productList": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "productName": "APple",
+      "category": "vegetable",
+      "freshness": "Brand New",
+      "price": 10,
+      "comment": "new apple",
+      "date": "2022-05-03T18:00:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "Banana",
+      "category": "fruits",
+      "freshness": "Refrbished",
+      "price": 2,
+      "comment": "Nai",
+      "date": "2022-04-30T18:00:00.000Z",
+      "id": 2
     }
   ],
   "comments": [
