@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { ITask } from '../model/Task';
 
 
 @Component({
@@ -11,12 +12,12 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 export class ListComponent implements OnInit {
 
   itemList !: FormGroup;
-  tasks : any[]= [];
-  inProgress : any[]= [];
-  done : any[]= [];
+  tasks : ITask[]= [];
+  inProgress : ITask[]= [];
+  done : ITask[]= [];
 
 
-drop(event: CdkDragDrop<string[]>) {
+drop(event: CdkDragDrop<ITask[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -34,6 +35,13 @@ drop(event: CdkDragDrop<string[]>) {
   ngOnInit(): void {
     this.itemList = this.formBuilder.group({
       item : ['',Validators.required]
+    })
+  }
+  
+  addTask(){
+    this.tasks.push({
+      description: this.itemList.value.item,
+      done : false
     })
   }
 
