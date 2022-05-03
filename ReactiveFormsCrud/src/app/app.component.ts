@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild , AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DialogComponent } from './dialog/dialog.component';
 import { ApiService } from './services/api.service';
+
 
 
 @Component({
@@ -15,7 +16,7 @@ import { ApiService } from './services/api.service';
 export class AppComponent implements OnInit{
   title = 'ReactiveFormsCrud';
 
-  displayedColumns: string[] = ['ProductName', 'Catgeory', 'date', 'price','comment'];
+  displayedColumns: string[] = ['ProductName', 'Catgeory', 'date', 'price','comment','action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -34,6 +35,14 @@ export class AppComponent implements OnInit{
     width:'30%'  
     });
    }
+
+   
+  editProduct(row : any){
+    const dialogRef = this.dialog.open(DialogComponent,{
+      width:'30%',
+      data: row  
+      });
+  }
 
    getAllProducts(){
     this.api.getProduct().subscribe({
