@@ -17,6 +17,15 @@
       "comment": "Nai",
       "date": "2022-04-30T18:00:00.000Z",
       "id": 2
+    },
+    {
+      "productName": "Mango",
+      "category": "fruits",
+      "freshness": "Brand New",
+      "price": 10,
+      "comment": "amropali",
+      "date": "2022-04-28T18:00:00.000Z",
+      "id": 3
     }
   ],
   "comments": [
