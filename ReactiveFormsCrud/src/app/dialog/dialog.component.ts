@@ -20,19 +20,24 @@ export class DialogComponent implements OnInit {
     private dialogRef : MatDialogRef<DialogComponent>) { }
 
   addProduct(){
-    if(this.productForm.valid){
-      this.api.postProduct(this.productForm.value)
-      .subscribe({
-        next:(res)=>{
-          alert('product added sucessfully')
-          this.productForm.reset();
-          this.dialogRef.close('save')
-        },
-        error:()=>{
-          alert('error occuered!')
-        }
-      })
+    if(!this.editData){
+      if(this.productForm.valid){
+        this.api.postProduct(this.productForm.value)
+        .subscribe({
+          next:(res)=>{
+            alert('product added sucessfully')
+             this.productForm.reset();
+            this.dialogRef.close('save')
+          },
+          error:()=>{
+            alert('error occuered!')
+          }
+        })
+      }
+    }else{
+      this.updateProduct();
     }
+   
   }
 
   ngOnInit(): void {
@@ -56,6 +61,15 @@ export class DialogComponent implements OnInit {
       this.productForm.controls['date'].setValue(this.editData.date);
 
     }
+  }
+  updateProduct(){
+    this.api.putProduct(this.productForm.value,this.editData.id).subscribe({
+      next:(res)=>{
+        alert('product updated!')
+        this.productForm.reset();
+        this.dialogRef.close('update')
+      }
+    })
   }
 
 
