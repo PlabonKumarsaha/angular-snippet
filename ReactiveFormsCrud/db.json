@@ -12,20 +12,11 @@
     {
       "productName": "Banana",
       "category": "fruits",
-      "freshness": "Refrbished",
-      "price": 2,
-      "comment": "Nai",
-      "date": "2022-04-30T18:00:00.000Z",
-      "id": 2
-    },
-    {
-      "productName": "Mango",
-      "category": "fruits",
       "freshness": "Brand New",
-      "price": 10,
-      "comment": "amropali",
-      "date": "2022-04-28T18:00:00.000Z",
-      "id": 3
+      "price": 20,
+      "comment": "kola",
+      "date": "2022-05-03T18:00:00.000Z",
+      "id": 2
     }
   ],
   "comments": [
