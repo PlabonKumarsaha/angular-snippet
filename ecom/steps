@@ -1,3 +1,9 @@
 # adding bootrap
 1.cmd : ng add @ng-bootstrap/ng-bootstrap
 2. restart the server
+
+# Lazy loading in angular
+
+1. create new module : ng g m module_name
+2. import the module file in app.module 
+3. Export the components in module file to use it outside module
